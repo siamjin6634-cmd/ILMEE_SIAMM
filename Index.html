@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilme + Siam</title>
+    <style>
+        body { margin: 0; background: #0b0b0b; font-family: 'Segoe UI', sans-serif; color: #fff; text-align: center; }
+        .lock { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .lock input { padding: 12px; border-radius: 20px; border: 1px solid #444; background: #222; color: #fff; width: 200px; text-align: center; outline: none; }
+        .lock button { margin-top: 15px; padding: 10px 30px; border-radius: 20px; border: none; background: #ffd2ba; cursor: pointer; font-weight: bold; }
+        .main { display: none; padding: 20px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; padding: 20px; }
+        .gallery img { width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); border: 1px solid #333; }
+        h1 { color: #ffd2ba; margin-top: 40px; font-size: 2.5rem; }
+        p { opacity: 0.8; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div id="lock" class="lock">
+        <h2>Private Memories 🤍</h2>
+        <input type="password" id="pass" placeholder="Enter password">
+        <button onclick="check()">Unlock</button>
+    </div>
+
+    <div id="main" class="main">
+        <h1>Ilme + Siam</h1>
+        <p>Some memories don't fade — they stay.</p>
+        <div class="gallery">
+            <img src="img1.jpg">
+            <img src="img2.jpg">
+            <img src="img3.jpg">
+            <img src="img4.jpg">
+            <img src="img5.jpg">
+            <img src="img6.jpg">
+            <img src="img7.jpg">
+            <img src="img8.jpg">
+        </div>
+        <footer style="padding: 50px; opacity: 0.5;">Our story • quietly beautiful</footer>
+    </div>
+
+    <script>
+        function check() {
+            var p = document.getElementById("pass").value;
+            if (p === "19112025") {
+                document.getElementById("lock").style.display = "none";
+                document.getElementById("main").style.display = "block";
+            } else {
+                alert("Wrong password 🤍");
+            }
+        }
+    </script>
+</body>
+</html>
